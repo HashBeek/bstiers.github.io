@@ -1,353 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>BSTIERS</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
-<style>
-
-body{
-margin:0;
-font-family:Orbitron;
-background:#0a0a0a;
-color:white;
-overflow-x:hidden;
-}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:#111;
-border-bottom:2px solid #ff3b3b;
-}
-
-.logo{
-font-size:28px;
-color:#ff3b3b;
-font-weight:bold;
-letter-spacing:2px;
-}
-
-nav button{
-background:none;
-border:none;
-color:white;
-margin:0 10px;
-font-size:15px;
-cursor:pointer;
-transition:0.3s;
-}
-
-nav button:hover{
-color:#ff3b3b;
-}
-
-.search{
-background:#1a1a1a;
-border:none;
-padding:8px;
-border-radius:5px;
-color:white;
-}
-
-.hero{
-text-align:center;
-padding:60px;
-animation:fade 1.5s;
-}
-
-.hero h1{
-font-size:50px;
-color:#ff3b3b;
-}
-
-.modalidades{
-display:flex;
-justify-content:center;
-gap:20px;
-margin:20px;
-}
-
-.modalidades button{
-background:#1a1a1a;
-border:1px solid #ff3b3b;
-padding:10px 20px;
-color:white;
-cursor:pointer;
-border-radius:6px;
-transition:0.3s;
-}
-
-.modalidades button:hover{
-background:#ff3b3b;
-}
-
-.ranking{
-max-width:900px;
-margin:auto;
-margin-top:40px;
-}
-
-.player{
-display:flex;
-align-items:center;
-justify-content:space-between;
-background:#121212;
-padding:15px;
-margin:10px 0;
-border-radius:8px;
-transition:0.3s;
-}
-
-.player:hover{
-transform:scale(1.03);
-background:#1a1a1a;
-}
-
-.player img{
-width:40px;
-height:40px;
-border-radius:50%;
-}
-
-.info{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.rank{
-color:#ff3b3b;
-font-weight:bold;
-}
-
-.points{
-color:#aaa;
-}
-
-.discord{
-text-align:center;
-margin-top:50px;
-}
-
-.discord a{
-background:#5865F2;
-padding:15px 30px;
-border-radius:6px;
-color:white;
-text-decoration:none;
-}
-
-footer{
-margin-top:60px;
-text-align:center;
-color:#777;
-padding:20px;
-}
-
-/* PANEL MODERADOR */
-
-.modpanel{
-position:fixed;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-background:#111;
-padding:30px;
-border:2px solid red;
-display:none;
-z-index:100;
-}
-
-.modpanel input{
-display:block;
-margin:10px 0;
-padding:8px;
-width:200px;
-}
-
-.modpanel button{
-background:red;
-border:none;
-padding:10px;
-color:white;
-cursor:pointer;
-}
-
-@keyframes fade{
-from{opacity:0;transform:translateY(20px)}
-to{opacity:1}
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSTIERS - Rankings Blood Strike</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Quantico:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="BSTIERS Logo" class="logo">
+            <h1>BSTIERS</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#overall">Overall</a></li>
+                <li><a href="#arena">Arena Duel</a></li>
+                <li><a href="#sniper">Sniper Duel</a></li>
+                <li><a href="#escopeta">Escopeta</a></li>
+                <li><a href="#subfusil">Subfusil</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Buscar jugador...">
+        </div>
+    </header>
 
-<header>
+    <main>
+        <section id="overall">
+            <h2>Overall Rankings</h2>
+            <table class="leaderboard">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Region</th>
+                        <th>Tier</th>
+                    </tr>
+                </thead>
+                <tbody id="overall-body">
+                    <!-- Datos de ejemplo -->
+                    <tr><td>GabrielBS</td><td>LATAM</td><td class="tier-cr1">CR1</td></tr>
+                    <tr><td>ProKiller</td><td>SEA</td><td class="tier-cr2">CR2</td></tr>
+                    <!-- Más filas -->
+                </tbody>
+            </table>
+        </section>
 
-<div class="logo">BSTIERS</div>
+        <!-- Secciones similares para cada mod -->
+        <section id="arena">
+            <h2>Arena Duel <img src="arena-icon.png" alt="Arena Icon" class="mod-icon"></h2>
+            <table class="leaderboard">
+                <!-- Similar a overall -->
+            </table>
+        </section>
 
-<nav>
-<button onclick="setMode('Arena')">Arena</button>
-<button onclick="setMode('Sniper')">Sniper</button>
-<button onclick="setMode('Escopeta')">Escopeta</button>
-<button onclick="setMode('SMG')">Subfusil</button>
-</nav>
+        <!-- Repite para Sniper, Escopeta, Subfusil -->
+    </main>
 
-<input class="search" id="search" placeholder="Buscar jugador...">
+    <footer>
+        <p>&copy; 2026 BSTIERS - Inspirado en MCTiers, temático Blood Strike. Hecho por Gabriel en La Plata.</p>
+    </footer>
 
-</header>
-
-<section class="hero">
-<h1>BSTIERS Ranking</h1>
-<p>Los mejores jugadores del competitivo</p>
-</section>
-
-<div class="ranking" id="ranking"></div>
-
-<div class="discord">
-<a href="#">UNIRSE AL DISCORD</a>
-</div>
-
-<footer>
-BSTIERS © 2026
-</footer>
-
-<!-- PANEL MOD -->
-
-<div class="modpanel" id="modpanel">
-
-<h3>Panel Moderador</h3>
-
-<input id="name" placeholder="Nombre jugador">
-<input id="rank" placeholder="Rank">
-<input id="points" placeholder="Puntos">
-<input id="photo" placeholder="URL foto">
-
-<button onclick="addPlayer()">Agregar jugador</button>
-
-</div>
-
-<script>
-
-let players=[
-
-{
-name:"Ghost",
-rank:"S",
-points:450,
-photo:"https://i.pravatar.cc/40?img=1",
-mode:"Arena"
-},
-
-{
-name:"Shadow",
-rank:"A",
-points:320,
-photo:"https://i.pravatar.cc/40?img=2",
-mode:"Sniper"
-},
-
-{
-name:"Viper",
-rank:"B",
-points:200,
-photo:"https://i.pravatar.cc/40?img=3",
-mode:"SMG"
-}
-
-]
-
-let currentMode="Arena"
-
-function render(){
-
-let html=""
-
-players
-.filter(p=>p.mode===currentMode)
-.sort((a,b)=>b.points-a.points)
-.forEach((p,i)=>{
-
-html+=`
-
-<div class="player">
-
-<div class="info">
-
-<span class="rank">#${i+1}</span>
-
-<img src="${p.photo}">
-
-<div>
-
-<div>${p.name}</div>
-<div class="points">${p.rank} • ${p.points} pts</div>
-
-</div>
-
-</div>
-
-</div>
-
-`
-
-})
-
-document.getElementById("ranking").innerHTML=html
-
-}
-
-function setMode(mode){
-
-currentMode=mode
-render()
-
-}
-
-render()
-
-/* BUSCADOR + PANEL */
-
-document.getElementById("search").addEventListener("input",function(){
-
-let v=this.value
-
-if(v==="hstdhs"){
-document.getElementById("modpanel").style.display="block"
-}
-
-})
-
-function addPlayer(){
-
-let name=document.getElementById("name").value
-let rank=document.getElementById("rank").value
-let points=document.getElementById("points").value
-let photo=document.getElementById("photo").value
-
-players.push({
-
-name:name,
-rank:rank,
-points:points,
-photo:photo,
-mode:currentMode
-
-})
-
-render()
-
-}
-
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
