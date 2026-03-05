@@ -1,0 +1,115 @@
+body {
+    background: linear-gradient(to bottom, #000000, #330000); /* Negro a rojo sangre */
+    color: #ffffff;
+    font-family: 'Quantico', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #000000;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ffd700; /* Oro */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffd700; /* Oro */
+    margin-left: 10px;
+    text-shadow: 0 0 10px #ff0000; /* Glow rojo sangre */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+.search-container {
+    margin: 20px 0;
+}
+
+#search {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ff0000;
+    background: #111111;
+    color: #ffffff;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff0000; /* Rojo sangre */
+    text-align: center;
+}
+
+.mod-icon {
+    width: 30px;
+    vertical-align: middle;
+}
+
+.leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+}
+
+.leaderboard th, .leaderboard td {
+    border: 1px solid #ffd700;
+    padding: 10px;
+    text-align: center;
+}
+
+.leaderboard th {
+    background: #ff0000;
+}
+
+.tier-cr1 {
+    color: #ffd700; /* Oro elite */
+    font-weight: bold;
+}
+
+.tier-cr2 {
+    color: #ff0000; /* Rojo veterano */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    .leaderboard {
+        font-size: 14px;
+    }
+}
