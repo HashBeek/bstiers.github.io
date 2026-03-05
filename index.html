@@ -1,316 +1,243 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BSTIERS</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
-
 <style>
+
 body{
-margin:0;
-font-family:'Orbitron',sans-serif;
-background:#050505;
+background:#0b0b0b;
 color:white;
-overflow-x:hidden;
-}
-
-/* Fondo animado */
-.background{
-position:fixed;
-width:100%;
-height:100%;
-background:radial-gradient(circle at center,#1a0000,#000000 70%);
-z-index:-1;
-animation:pulse 4s infinite alternate;
-}
-
-@keyframes pulse{
-0%{filter:brightness(1);}
-100%{filter:brightness(1.2);}
-}
-
-header{
+font-family:Arial;
 text-align:center;
-padding:40px 20px;
-border-bottom:2px solid #ff0000;
-background:rgba(0,0,0,0.8);
 }
 
-.logo{
+h1{
+color:#ff2a2a;
 font-size:50px;
-font-weight:900;
-color:#ff0000;
 letter-spacing:3px;
 }
 
-.subtitle{
-color:#aaa;
-margin-top:10px;
-}
-
-.discord-btn{
+.logo{
+font-size:60px;
 margin-top:20px;
-padding:14px 35px;
-background:#5865F2;
-border:none;
-color:white;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
 }
 
-.discord-btn:hover{
-transform:scale(1.05);
+.discord{
+background:#5865F2;
+padding:12px 25px;
+border-radius:10px;
+color:white;
+text-decoration:none;
+font-weight:bold;
 }
 
 .section{
-padding:60px 20px;
-text-align:center;
+margin-top:50px;
 }
 
-.stats{
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-margin-bottom:40px;
-}
-
-.stat{
-font-size:28px;
-color:#ff0000;
-}
-
-.filters{
-margin-bottom:30px;
-}
-
-select,input{
-padding:10px;
-margin:5px;
-background:#111;
-border:1px solid #333;
-color:white;
-}
-
-.ranker{
-background:#111;
-margin:15px auto;
-padding:20px;
-width:90%;
-max-width:800px;
-border:1px solid #222;
-display:flex;
-justify-content:space-between;
-align-items:center;
-transition:0.3s;
-}
-
-.ranker:hover{
-border:1px solid #ff0000;
-transform:scale(1.02);
-}
-
-.left{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.left img{
-width:60px;
-height:60px;
-border-radius:50%;
-border:2px solid #ff0000;
-}
-
-.top3{
-border:2px solid gold;
-box-shadow:0 0 20px rgba(255,215,0,0.4);
-}
-
-.position{
-font-size:22px;
-color:#ff0000;
-font-weight:bold;
-}
-
-.hidden{
-display:none;
-}
-
-.panel{
-background:#0f0f0f;
-padding:30px;
-margin-top:40px;
-border-top:2px solid #ff0000;
-}
-
-.panel input{
-display:block;
-margin:10px auto;
-width:250px;
-}
-
-.panel button{
+button{
 padding:10px 20px;
-background:#ff0000;
+margin:5px;
 border:none;
+border-radius:8px;
+background:#ff2a2a;
 color:white;
 cursor:pointer;
-margin:5px;
 }
 
-footer{
-text-align:center;
-padding:30px;
-background:#111;
-margin-top:50px;
-border-top:2px solid #ff0000;
+button:hover{
+background:#ff5555;
 }
+
+table{
+margin:auto;
+margin-top:20px;
+border-collapse:collapse;
+width:80%;
+}
+
+th,td{
+padding:12px;
+border-bottom:1px solid #333;
+}
+
+.player-img{
+width:40px;
+height:40px;
+border-radius:50%;
+}
+
+input{
+padding:10px;
+border-radius:6px;
+border:none;
+}
+
+#adminPanel{
+display:none;
+background:#141414;
+padding:20px;
+margin-top:40px;
+border-radius:10px;
+width:70%;
+margin-left:auto;
+margin-right:auto;
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div class="background"></div>
+<div class="logo">🩸 BSTIERS</div>
 
-<header>
-<div class="logo">BSTIERS</div>
-<div class="subtitle">Arena Competitiva Oficial de Blood Strike</div>
-<button class="discord-btn" onclick="window.open('https://discord.gg/TUINVITE')">
-Unirse al Discord
-</button>
-</header>
+<h1>Blood Strike Competitive Ranking</h1>
 
-<section class="section">
+<a class="discord" href="#">Entrar al Discord</a>
 
-<h2>🏆 Ranking Oficial</h2>
+<div class="section">
 
-<div class="stats">
-<div class="stat">Jugadores: <span id="totalPlayers">0</span></div>
-<div class="stat">Modalidades: 4</div>
+<h2>🎮 Modalidades</h2>
+
+<button>Arena Duel</button>
+<button>Sniper</button>
+<button>Escopeta</button>
+<button>Subfusil</button>
+
 </div>
 
-<div class="filters">
-<input type="text" id="search" placeholder="Buscar jugador o clave staff...">
-<select id="modeFilter">
-<option value="">Todas las modalidades</option>
-<option>Arena Duels</option>
+<div class="section">
+
+<h2>🏆 Ranking</h2>
+
+<table id="rankingTable">
+
+<tr>
+<th>#</th>
+<th>Jugador</th>
+<th>Foto</th>
+<th>Modalidad</th>
+<th>Tier</th>
+</tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>🔎 Buscar jugador</h2>
+
+<input id="searchBox" placeholder="Buscar nombre...">
+
+<button onclick="buscar()">Buscar</button>
+
+</div>
+
+<div id="adminPanel">
+
+<h2>🛠 Panel Moderador BSTIERS</h2>
+
+<input id="name" placeholder="Nombre jugador">
+
+<input id="photo" placeholder="URL foto">
+
+<select id="mode">
+
+<option>Arena Duel</option>
 <option>Sniper</option>
 <option>Escopeta</option>
-<option>Subfusiles</option>
+<option>Subfusil</option>
+
 </select>
 
-<select id="tierFilter">
-<option value="">Todos los tiers</option>
-<option>S</option>
-<option>A</option>
-<option>B</option>
-<option>C</option>
+<select id="tier">
+
+<option>ST2</option>
+<option>ST1</option>
+<option>BR2</option>
+<option>BR1</option>
+<option>IR2</option>
+<option>IR1</option>
+<option>SL2</option>
+<option>SL1</option>
+<option>CR2</option>
+<option>CR1</option>
+
 </select>
+
+<button onclick="addPlayer()">Agregar jugador</button>
+
 </div>
-
-<div id="rankingList"></div>
-
-<div id="modPanel" class="hidden panel">
-<h2>🔐 Panel Moderador</h2>
-
-<input type="text" id="name" placeholder="Nombre">
-<input type="text" id="mode" placeholder="Modalidad">
-<input type="text" id="tier" placeholder="Tier (S/A/B/C)">
-<input type="text" id="img" placeholder="URL Imagen">
-
-<button onclick="addRanker()">Agregar</button>
-<button onclick="clearAll()">Reset Ranking</button>
-</div>
-
-</section>
-
-    <footer>
-© 2026 BSTIERS | Arena Extrema
-</footer>
 
 <script>
 
-let rankers = JSON.parse(localStorage.getItem("bstiers")) || [
-{name:"Zerox",mode:"Sniper",tier:"S",img:"https://via.placeholder.com/60"},
-{name:"Shadow",mode:"Arena Duels",tier:"A",img:"https://via.placeholder.com/60"}
-];
+let players = []
 
-function save(){
-localStorage.setItem("bstiers",JSON.stringify(rankers));
+function addPlayer(){
+
+let name = document.getElementById("name").value
+let photo = document.getElementById("photo").value
+let mode = document.getElementById("mode").value
+let tier = document.getElementById("tier").value
+
+players.push({name,photo,mode,tier})
+
+render()
+
 }
 
 function render(){
-let container=document.getElementById("rankingList");
-container.innerHTML="";
 
-let mode=document.getElementById("modeFilter").value;
-let tier=document.getElementById("tierFilter").value;
-let search=document.getElementById("search").value.toLowerCase();
+let table = document.getElementById("rankingTable")
 
-let filtered=rankers.filter(r=>{
-return (!mode||r.mode===mode)&&
-(!tier||r.tier===tier)&&
-r.name.toLowerCase().includes(search);
-});
+table.innerHTML = `
+<tr>
+<th>#</th>
+<th>Jugador</th>
+<th>Foto</th>
+<th>Modalidad</th>
+<th>Tier</th>
+</tr>
+`
 
-filtered.forEach((r,i)=>{
-container.innerHTML+=`
-<div class="ranker ${i<3?"top3":""}">
-<div class="left">
-<img src="${r.img}">
-<div>
-<strong>${r.name}</strong><br>
-<small>${r.mode}</small><br>
-<small>Tier ${r.tier}</small>
-</div>
-</div>
-<div class="position">#${i+1}</div>
-</div>
-`;
-});
+players.forEach((p,i)=>{
 
-document.getElementById("totalPlayers").innerText=rankers.length;
+table.innerHTML += `
+<tr>
+<td>${i+1}</td>
+<td>${p.name}</td>
+<td><img class="player-img" src="${p.photo}"></td>
+<td>${p.mode}</td>
+<td>${p.tier}</td>
+</tr>
+`
+
+})
+
 }
 
-function addRanker(){
-let name=document.getElementById("name").value;
-let mode=document.getElementById("mode").value;
-let tier=document.getElementById("tier").value;
-let img=document.getElementById("img").value;
+function buscar(){
 
-if(name&&mode&&tier&&img){
-rankers.push({name,mode,tier,img});
-save();
-render();
-}
-}
+let texto = document.getElementById("searchBox").value
 
-function clearAll(){
-if(confirm("¿Seguro?")){
-rankers=[];
-save();
-render();
-}
+if(texto === "BSTIERS_ADMIN_2026"){
+
+document.getElementById("adminPanel").style.display="block"
+
+alert("Panel de moderador activado")
+
 }
 
-document.getElementById("search").addEventListener("input",function(){
-if(this.value==="bstaff2026"){
-document.getElementById("modPanel").classList.remove("hidden");
 }
-render();
-});
-
-document.getElementById("modeFilter").addEventListener("change",render);
-document.getElementById("tierFilter").addEventListener("change",render);
-
-render();
 
 </script>
 
 </body>
+
 </html>
