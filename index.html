@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BSTIERS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: #0a0a0a;
+    color: white;
+}
+
+header {
+    background: #111;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ff1c1c;
+}
+
+header h1 {
+    color: #ff1c1c;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff1c1c;
+}
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: radial-gradient(circle at center, #1a0000 0%, #000 70%);
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    padding: 15px 35px;
+    font-size: 16px;
+    background: #ff1c1c;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #cc0000;
+}
+
+.section {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    color: #ff1c1c;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #111;
+    padding: 30px;
+    border: 1px solid #222;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border: 1px solid #ff1c1c;
+    transform: scale(1.03);
+}
+
+.card h3 {
+    color: #ff1c1c;
+}
+
+.ranking-table {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.ranking-table th,
+.ranking-table td {
+    padding: 12px;
+    border-bottom: 1px solid #222;
+}
+
+.ranking-table th {
+    background: #111;
+    color: #ff1c1c;
+}
+
+.ranking-table tr:hover {
+    background: #1a0000;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.player img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ff1c1c;
+}
+
+footer {
+    background: #111;
+    padding: 25px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 2px solid #ff1c1c;
+}
+  @media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav {
+        margin-top: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>BSTIERS</h1>
+<nav>
+<a href="#modalidades">Modalidades</a>
+<a href="#ranking">Ranking</a>
+<a href="#reglamento">Sistema</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Demuestra tu nivel. Gana tu lugar.</h2>
+<button onclick="window.location.href='https://discord.gg/TUINVITE'">
+Solicitar Evaluación
+</button>
+</section>
+
+<section class="section" id="modalidades">
+<h2>Modalidades Oficiales</h2>
+<div class="cards">
+
+<div class="card">
+<h3>Arena Duels</h3>
+<p>Combates 1vs1 completos. Aim, movimiento y control total.</p>
+</div>
+
+<div class="card">
+<h3>Sniper</h3>
+<p>Precisión extrema. Reflejos y sangre fría.</p>
+</div>
+
+<div class="card">
+<h3>Escopeta</h3>
+<p>Dominio a corta distancia. Presión constante.</p>
+</div>
+
+<div class="card">
+<h3>Subfusiles</h3>
+<p>Velocidad y control de recoil bajo combate intenso.</p>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="ranking">
+<h2>Ranking Actual</h2>
+
+<table class="ranking-table">
+<tr>
+<th>Jugador</th>
+<th>Modalidad</th>
+<th>Tier</th>
+<th>Fecha</th>
+</tr>
+
+<tr>
+<td>
+<div class="player">
+<img src="https://via.placeholder.com/40" alt="perfil">
+<span>Zerox</span>
+</div>
+</td>
+<td>Sniper</td>
+<td>S</td>
+<td>02/01/26</td>
+</tr>
+
+<tr>
+<td>
+<div class="player">
+<img src="https://via.placeholder.com/40" alt="perfil">
+<span>Shadow</span>
+</div>
+</td>
+<td>Arena Duels</td>
+<td>A</td>
+<td>28/12/25</td>
+</tr>
+
+</table>
+</section>
+
+<section class="section" id="reglamento">
+<h2>Sistema de Evaluación</h2>
+<p>
+1. Abrís ticket en Discord.<br>
+2. Entrás en lista de espera.<br>
+3. Se asigna fecha y oponente.<br>
+4. Evaluación grabada oficial.<br>
+5. Resultado y tier asignado.
+</p>
+</section>
+
+<footer>
+© 2026 BSTIERS | Competitive Tier System
+</footer>
+
+</body>
+</html>
