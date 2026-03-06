@@ -3,63 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BSTIERS - Rankings Blood Strike</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Quantico:wght@400;700&display=swap" rel="stylesheet">
+    <title>BSTIERS - Blood Strike Rankings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="BSTIERS Logo" class="logo">
-            <h1>BSTIERS</h1>
+        <div class="container header-flex">
+            <div class="logo">
+                <img src="logo.png" alt="BSTIERS Logo">
+                <h1>BSTIERS</h1>
+            </div>
+            <nav>
+                <a href="#overall">Overall</a>
+                <a href="#arena">Arena Duel</a>
+                <a href="#sniper">Sniper</a>
+                <a href="#escopeta">Escopeta</a>
+                <a href="#subfusil">Subfusil</a>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#overall">Overall</a></li>
-                <li><a href="#arena">Arena Duel</a></li>
-                <li><a href="#sniper">Sniper Duel</a></li>
-                <li><a href="#escopeta">Escopeta</a></li>
-                <li><a href="#subfusil">Subfusil</a></li>
-            </ul>
-        </nav>
-        <div class="search-container">
-            <input type="text" id="search" placeholder="Buscar jugador...">
+        <div class="search-bar container">
+            <input type="text" id="searchInput" placeholder="Buscar jugador o región...">
         </div>
     </header>
 
-    <main>
+    <main class="container">
         <section id="overall">
             <h2>Overall Rankings</h2>
-            <table class="leaderboard">
-                <thead>
-                    <tr>
-                        <th>Player</th>
-                        <th>Region</th>
-                        <th>Tier</th>
-                    </tr>
-                </thead>
-                <tbody id="overall-body">
-                    <!-- Datos de ejemplo -->
-                    <tr><td>GabrielBS</td><td>LATAM</td><td class="tier-cr1">CR1</td></tr>
-                    <tr><td>ProKiller</td><td>SEA</td><td class="tier-cr2">CR2</td></tr>
-                    <!-- Más filas -->
-                </tbody>
-            </table>
+            <div class="tier cr1">
+                <h3>CR1 - Crimson Elite</h3>
+                <table>
+                    <thead><tr><th>Rank</th><th>Jugador</th><th>Región</th><th>Tests</th></tr></thead>
+                    <tbody class="searchable">
+                        <tr><td>1</td><td>GabrielBS</td><td>LATAM</td><td>18</td></tr>
+                        <!-- Agrega tus jugadores reales aquí -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tier cr2">
+                <h3>CR2 - Crimson Veteran</h3>
+                <table>
+                    <thead><tr><th>Rank</th><th>Jugador</th><th>Región</th><th>Tests</th></tr></thead>
+                    <tbody class="searchable">
+                        <!-- filas -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Repite div.tier para SL1, IR1, BR1, ST1/ST2 con class="tier sl1" etc. -->
         </section>
 
-        <!-- Secciones similares para cada mod -->
+        <!-- Copia la estructura de <section id="overall"> para #arena, #sniper, etc. y cambia títulos/tabla -->
         <section id="arena">
-            <h2>Arena Duel <img src="arena-icon.png" alt="Arena Icon" class="mod-icon"></h2>
-            <table class="leaderboard">
-                <!-- Similar a overall -->
-            </table>
+            <h2>Arena Duel</h2>
+            <!-- tiers agrupados como arriba -->
         </section>
-
-        <!-- Repite para Sniper, Escopeta, Subfusil -->
+        <!-- ... -->
     </main>
 
     <footer>
-        <p>&copy; 2026 BSTIERS - Inspirado en MCTiers, temático Blood Strike. Hecho por Gabriel en La Plata.</p>
+        <p>© 2026 BSTIERS • Inspirado en MCTiers • Discord: [tu invite] • Meta: Bizon / M1887 / M700</p>
     </footer>
 
     <script src="script.js"></script>
